@@ -14,7 +14,7 @@ const parseURLParams = (value) => {
   const server = http.createServer(async (req, res) => {
     const [basePath, paramsString] = req.url.split("?");
   
-    if (basePath === "/api/data/people" && req.method === "GET") {
+    if (basePath === "/data/people" && req.method === "GET") {
       const params = parseURLParams(paramsString);
       
       
@@ -22,7 +22,7 @@ const parseURLParams = (value) => {
   
       res.writeHead(code, { "Content-Type": "application/json" });
       res.end(data);
-    } else if (basePath.match(/\/api\/data\/people\/\w+/) && req.method === "GET") {
+    } else if (basePath.match(/\/data\/people\/\w+/) && req.method === "GET") {
       const id = basePath.split("/")[3];
       
   
