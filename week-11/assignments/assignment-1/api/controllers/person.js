@@ -1,4 +1,4 @@
-const people = require("../assignment/data/people.json");
+const people = require("./data/people.json");
 
 const getAll = ({ id, first_name, last_name, email, gender, ip_address }) =>
   new Promise((resolve) => {
